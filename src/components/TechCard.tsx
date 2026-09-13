@@ -55,7 +55,7 @@ function getHoverBackground(colorTheme: string) {
 const TechCard = ({ tech, isAdded, onAdd }: TechCardProps) => {
   return (
     // Card Div
-    <div className={`bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:-translate-y-[1px] transition duration-200 h-full flex flex-col ${getHoverBackground(tech.colorTheme)}`}>
+    <div className={`bg-white border ${isAdded ? "border-pink-500" : "border-gray-200"} rounded-2xl p-5 shadow-sm hover:shadow-lg hover:-translate-y-[1px] transition duration-200 h-full flex flex-col ${getHoverBackground(tech.colorTheme)}`}>
       {/* Logo, Badge  */}
       <div className="flex justify-between items-center mb-4">
         {/* Logo */}
@@ -69,7 +69,7 @@ const TechCard = ({ tech, isAdded, onAdd }: TechCardProps) => {
       {/* Technology NAme  */}
       <h3 className="font-bold text-gray-900 text-base mb-1">{tech.name}</h3>
       {/* Technology Description */}
-      <p className="font-medium text-gray-500 mb-4 leading-relaxed">
+      <p className="font-500 text-gray-500 mb-4 leading-relaxed text-[14px] ">
         {tech.description}
       </p>
 
@@ -84,11 +84,11 @@ const TechCard = ({ tech, isAdded, onAdd }: TechCardProps) => {
       <button onClick={() => onAdd(tech)} disabled={isAdded}
         className={
           isAdded
-            ? "w-full bg-gray-200 text-gray-500 rounded-lg py-2.5 text-sm font-medium mt-auto"
+            ? "w-full bg-pink-100 text-pink-700 rounded-lg py-2.5 text-sm font-semibold mt-auto flex items-center justify-center gap-2"
             : "w-full bg-gray-900 text-white rounded-lg py-2.5 text-sm font-medium mt-auto cursor-pointer"
         }
       >
-        {isAdded ? "Added" : "Add to Stack"}
+        {isAdded ? <><span aria-label="checked">✓</span> Added to Stack</> : "Add to Stack"}
       </button>
     </div>
   );

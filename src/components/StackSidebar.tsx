@@ -10,13 +10,17 @@ const StackSidebar = ({ stack, onRemove, onRemoveAll }: StackSidebarProps) => {
   return (
     <div className="w-full lg:w-72 lg:mt-21 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm h-fit lg:sticky lg:top-6">
       <h3 className="font-bold text-gray-900 text-lg mb-1">Your Stack</h3>
-      <p className="text-sm text-gray-400 mb-4">
-        {stack.length} {stack.length === 1 ? "Technology" : "Technologies"} Selected
-      </p>
+      {stack.length === 0 ? (
+        <p className="text-sm text-gray-400 mb-4">No technologies selected yet.</p>
+      ) : (
+        <p className="text-sm text-gray-400 mb-4">
+          {stack.length} {stack.length === 1 ? "Technology Selected" : "Technologies Selected"}
+        </p>
+      )}
 
       {stack.length === 0 && (
         <p className="text-sm text-gray-400 border border-dashed px-5 py-3 rounded-lg mx-3 my-2">
-          No technology added yet.
+          Your Stack is empty.
         </p>
       )}
 
