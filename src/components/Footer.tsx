@@ -28,7 +28,7 @@ const Footer = () => {
             {/* Social link */}
             <div className="flex items-center gap-4 text-sm font-medium text-slate-600">
               <a href="https://github.com/mabdullah404" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">GitHub</a>
-              <a href="https://x.com/junayed_jh" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">Twitter</a>
+              <a href="https://x.com/mabdullah77d" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">Twitter</a>
               <a href="https://www.linkedin.com/in/mabdullah77/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600">LinkedIn</a>
             </div>
           </div>
